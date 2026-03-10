@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planner com MVP.css</title>
+    <!-- MVP.css Stylesheet -->
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+    <!-- Nossos ajustes específicos para o wireframe (apenas o necessário) -->
+    <style>
+        /* Pequenos ajustes para o calendário parecer com o wireframe */
+        .planner-title {
+            margin-bottom: 0.5rem; /* Reduz o espaço padrão do MVP.css */
+            font-weight: 500; /* Ajusta a espessura, se desejado */
+            border-bottom: 2px solid var(--color-bg-secondary); /* Linha sutil abaixo do título */
+            padding-bottom: 0.5rem;
+        }
+
+        /* Estilo para a tabela de calendário */
+        .calendario-table {
+            width: 100%;
+            white-space: normal; /* Permite que o texto quebre a linha */
+        }
+
+        /* Células do calendário com altura fixa e alinhamento no topo */
+        .calendario-table td {
+            height: 80px;          /* Altura fixa para as células */
+            vertical-align: top;    /* Alinha o conteúdo ao topo, como no wireframe */
+            text-align: left;       /* Alinha o texto à esquerda */
+            white-space: normal;
+        }
+
+        /* Estilo para as tarefas dentro das células */
+        .cell-task {
+            display: block;         /* Faz cada tarefa ocupar uma linha */
+            font-size: 0.85rem;
+            line-height: 1.3;
+            background-color: var(--color-accent); /* Usa uma cor de destaque do tema */
+            margin-bottom: 3px;     /* Espaço entre as tarefas */
+            padding: 2px 6px;       /* Um pequeno espaçamento interno */
+            border-radius: var(--border-radius); /* Usa o raio de borda do MVP */
+            color: var(--color-text);
+            border-left: 3px solid var(--color-link); /* Uma pequena marcação visual */
+        }
+
+        /* Ajuste na tabela de tarefas para alinhar melhor */
+        .tasks-table th:first-child,
+        .tasks-table td:first-child {
+            text-align: left; /* Título alinhado à esquerda */
+            width: 60%;       /* Dá mais espaço para o título */
+        }
+
+        .tasks-table th:last-child,
+        .tasks-table td:last-child {
+            text-align: left; /* Data também alinhada à esquerda, como no wireframe */
+        }
+
+        /* Remove a decoração de link do footer, se houver */
+        .footnote a {
+            text-decoration: none;
+            font-weight: normal;
+        }
+        .footnote a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- O MVP.css espera que o conteúdo principal esteja dentro de <main> -->
+    <main>
+        <!-- Título principal (Planner) -->
+        <h1 class="planner-title">Planner</h1>
+
+        <!-- Seção Calendário -->
+        <h2>📅 Calendário</h2>
+
+        <!-- Tabela do Calendário -->
+        <table class="calendario-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Dom</th>
+                    <th>Seg</th>
+                    <th>Ter</th>
+                    <th>Qua</th>
+                    <th>Qui</th>
+                    <th>Sex</th>
+                    <th>Sab</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Semana 1: vazia -->
+                <tr>
+                    <th>Semana 1</th> <!-- Usando <th> para o label da semana, fica mais semântico -->
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <!-- Semana 2: com tarefas na Terça -->
+                <tr>
+                    <th>Semana 2</th>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <span class="cell-task">Tarefa 1</span>
+                        <span class="cell-task">Tarefa 2</span>
+                        <span class="cell-task">Tarefa 3</span>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <!-- Semana 3: com tarefas na Quinta -->
+                <tr>
+                    <th>Semana 3</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <span class="cell-task">Tarefa 4</span>
+                        <span class="cell-task">Tarefa 5</span>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <!-- Semana 4: vazia -->
+                <tr>
+                    <th>Semana 4</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <!-- Semana 5: vazia -->
+                <tr>
+                    <th>Semana 5</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Seção Lista de Tarefas -->
+        <h2>📋 Lista de tarefas</h2>
+
+        <table class="tasks-table">
+            <thead>
+                <tr>
+                    <th>titulo</th>
+                    <th>data</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>tarefa 1</td>
+                    <td>terça, 15/04/2025</td>
+                </tr>
+                <tr>
+                    <td>tarefa 2</td>
+                    <td>terça, 15/04/2025</td>
+                </tr>
+                <tr>
+                    <td>tarefa 3</td>
+                    <td>terça, 15/04/2025</td>
+                </tr>
+                <tr>
+                    <td>tarefa 4</td>
+                    <td>quinta, 17/04/2025</td>
+                </tr>
+                <tr>
+                    <td>tarefa 5</td>
+                    <td>quinta, 17/04/2025</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Rodapé sutil (opcional) -->
+        <footer>
+            <hr>
+            <p class="footnote">wireframe planner · baseado em <a href="https://github.com/andybrewer/mvp.css" target="_blank">MVP.css</a></p>
+        </footer>
+    </main>
+</body>
+</html>
