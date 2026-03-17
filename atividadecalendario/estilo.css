@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #e5e7eb;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px;
+}
+
+.planner-container {
+    width: 100%;
+    max-width: 1400px;
+    background-color: white;
+    border: 1px solid #9ca3af;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 24px 28px;
+    margin: 20px auto;
+}
+
+.planner-title {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #000;
+    border-bottom: 3px solid #9ca3af;
+    padding-bottom: 6px;
+    margin-bottom: 24px;
+    display: inline-block;
+}
+
+.section-title {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #000;
+    margin: 0 0 12px 0;
+}
+
+/* área do calendário */
+.calendar-section {
+    width: 100%;
+    margin-bottom: 32px;
+}
+
+.calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid #6b7280;
+    table-layout: fixed;
+}
+
+.calendar-table th,
+.calendar-table td {
+    border: 1px solid #9ca3af;
+    vertical-align: top;
+    padding: 0;
+}
+
+.calendar-table th {
+    background-color: #e5e7eb;
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 2px solid #6b7280;
+}
+
+.week-label {
+    background-color: #f3f4f6;
+    font-weight: 500;
+    text-align: center;
+    vertical-align: middle;
+    width: 85px;
+    font-size: 0.95rem;
+    border-right: 2px solid #6b7280;
+    padding: 0 !important;
+}
+
+/* container do dia - formato quadrado */
+.day-container {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.day-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 8px;
+    font-weight: 500;
+    color: #1f2937;
+    border-bottom: 1px dotted #9ca3af;
+    background-color: #f9fafb;
+}
+
+.day-number {
+    font-size: 0.95rem;
+    background-color: #e5e7eb;
+    padding: 2px 8px;
+    color: #111827;
+    font-weight: 600;
+}
+
+.month-indicator {
+    font-size: 0.7rem;
+    color: #6b7280;
+}
+
+.day-cell {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 6px 8px;
+    scrollbar-width: thin;
+    scrollbar-color: #9ca3af #e5e7eb;
+    min-height: 0;
+}
+
+.day-cell::-webkit-scrollbar {
+    width: 6px;
+}
+.day-cell::-webkit-scrollbar-track {
+    background: #e5e7eb;
+}
+.day-cell::-webkit-scrollbar-thumb {
+    background-color: #9ca3af;
+    border-radius: 4px;
+}
+
+.task-item {
+    display: block;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    padding: 3px 6px;
+    margin-bottom: 3px;
+    color: #111827;
+    border-left: 3px solid #6b7280;
+    background-color: #f9fafb;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* lista de tarefas */
+.tasks-section {
+    width: 100%;
+    margin-top: 16px;
+}
+
+.tasks-container {
+    border: 2px solid #6b7280;
+    background-color: white;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    max-height: 200px;
+}
+
+.tasks-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.tasks-table th {
+    background-color: #e5e7eb;
+    border-bottom: 2px solid #6b7280;
+    padding: 14px 16px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.tasks-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #9ca3af;
+    background-color: white;
+}
+
+.tasks-table tr:last-child td {
+    border-bottom: none;
+}
+
+.data-col {
+    font-family: 'Courier New', Courier, monospace;
+    color: #1f2937;
+}
+
+.footer-note {
+    margin-top: 24px;
+    text-align: right;
+    font-size: 0.75rem;
+    color: #6b7280;
+    border-top: 1px dashed #9ca3af;
+    padding-top: 12px;
+}

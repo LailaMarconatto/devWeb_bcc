@@ -3,196 +3,247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planner com MVP.css</title>
-    <!-- MVP.css Stylesheet -->
-    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
-    <!-- Nossos ajustes específicos para o wireframe (apenas o necessário) -->
-    <style>
-        /* Pequenos ajustes para o calendário parecer com o wireframe */
-        .planner-title {
-            margin-bottom: 0.5rem; /* Reduz o espaço padrão do MVP.css */
-            font-weight: 500; /* Ajusta a espessura, se desejado */
-            border-bottom: 2px solid var(--color-bg-secondary); /* Linha sutil abaixo do título */
-            padding-bottom: 0.5rem;
-        }
-
-        /* Estilo para a tabela de calendário */
-        .calendario-table {
-            width: 100%;
-            white-space: normal; /* Permite que o texto quebre a linha */
-        }
-
-        /* Células do calendário com altura fixa e alinhamento no topo */
-        .calendario-table td {
-            height: 80px;          /* Altura fixa para as células */
-            vertical-align: top;    /* Alinha o conteúdo ao topo, como no wireframe */
-            text-align: left;       /* Alinha o texto à esquerda */
-            white-space: normal;
-        }
-
-        /* Estilo para as tarefas dentro das células */
-        .cell-task {
-            display: block;         /* Faz cada tarefa ocupar uma linha */
-            font-size: 0.85rem;
-            line-height: 1.3;
-            background-color: var(--color-accent); /* Usa uma cor de destaque do tema */
-            margin-bottom: 3px;     /* Espaço entre as tarefas */
-            padding: 2px 6px;       /* Um pequeno espaçamento interno */
-            border-radius: var(--border-radius); /* Usa o raio de borda do MVP */
-            color: var(--color-text);
-            border-left: 3px solid var(--color-link); /* Uma pequena marcação visual */
-        }
-
-        /* Ajuste na tabela de tarefas para alinhar melhor */
-        .tasks-table th:first-child,
-        .tasks-table td:first-child {
-            text-align: left; /* Título alinhado à esquerda */
-            width: 60%;       /* Dá mais espaço para o título */
-        }
-
-        .tasks-table th:last-child,
-        .tasks-table td:last-child {
-            text-align: left; /* Data também alinhada à esquerda, como no wireframe */
-        }
-
-        /* Remove a decoração de link do footer, se houver */
-        .footnote a {
-            text-decoration: none;
-            font-weight: normal;
-        }
-        .footnote a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <title>Planner · Março 2026</title>
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-    <!-- O MVP.css espera que o conteúdo principal esteja dentro de <main> -->
-    <main>
-        <!-- Título principal (Planner) -->
-        <h1 class="planner-title">Planner</h1>
+    <div class="planner-container">
+        <div class="planner-title">Planner - Março 2026</div>
 
         <!-- Seção Calendário -->
-        <h2>📅 Calendário</h2>
+        <div class="calendar-section">
+            <div class="section-title">Calendário</div>
+            
+            <table class="calendar-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Dom</th>
+                        <th>Seg</th>
+                        <th>Ter</th>
+                        <th>Qua</th>
+                        <th>Qui</th>
+                        <th>Sex</th>
+                        <th>Sab</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Semana 1: 01/mar a 07/mar -->
+                    <tr>
+                        <td class="week-label">Semana 1</td>
+                        <td><div class="day-container"><div class="day-header"><span class="day-number">01</span></div><div class="day-cell"></div></div></td>
+                        <td><div class="day-container"><div class="day-header"><span class="day-number">02</span></div><div class="day-cell"></div></div></td>
+                        <td><div class="day-container"><div class="day-header"><span class="day-number">03</span></div><div class="day-cell"></div></div></td>
+                        <td><div class="day-container"><div class="day-header"><span class="day-number">04</span></div><div class="day-cell"></div></div></td>
+                        <td><div class="day-container"><div class="day-header"><span class="day-number">05</span></div><div class="day-cell"></div></div></td>
+                        <td><div class="day-container"><div class="day-header"><span class="day-number">06</span></div><div class="day-cell"></div></div></td>
+                        <td><div class="day-container"><div class="day-header"><span class="day-number">07</span></div><div class="day-cell"></div></div></td>
+                    </tr>
+                    
+                    <!-- Semana 2: 08/mar a 14/mar -->
+                    <tr>
+                        <td class="week-label">Semana 2</td>
+                        <td><div class="day-container"><div class="day-header"><span class="day-number">08</span></div><div class="day-cell"></div></div></td>
+                        <td><div class="day-container"><div class="day-header"><span class="day-number">09</span></div><div class="day-cell"></div></div></td>
+                        <td>
+                            <div class="day-container">
+                                <div class="day-header"><span class="day-number">10</span></div>
+                                <div class="day-cell">
+                                    <span class="task-item">Tarefa 1 - Reunião</span>
+                                    <span class="task-item">Tarefa 2 - Entregar relatório</span>
+                                    <span class="task-item">Tarefa 3 - Ligar para cliente</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td><div class="day-container"><div class="day-header"><span class="day-number">11</span></div><div class="day-cell"></div></div></td>
+                        <td><div class="day-container"><div class="day-header"><span class="day-number">12</span></div><div class="day-cell"></div></div></td>
+                        <td><div class="day-container"><div class="day-header"><span class="day-number">13</span></div><div class="day-cell"></div></div></td>
+                        <td><div class="day-container"><div class="day-header"><span class="day-number">14</span></div><div class="day-cell"></div></div></td>
+                    </tr>
+                    
+                    <!-- Semana 3: 15/mar a 21/mar -->
+                    <tr>
+                        <td class="week-label">Semana 3</td>
+                        <td><div class="day-container"><div class="day-header"><span class="day-number">15</span></div><div class="day-cell"></div></div></td>
+                        <td><div class="day-container"><div class="day-header"><span class="day-number">16</span></div><div class="day-cell"></div></div></td>
+                        <td><div class="day-container"><div class="day-header"><span class="day-number">17</span></div><div class="day-cell"></div></div></td>
+                        <td><div class="day-container"><div class="day-header"><span class="day-number">18</span></div><div class="day-cell"></div></div></td>
+                        <td>
+                            <div class="day-container">
+                                <div class="day-header"><span class="day-number">19</span></div>
+                                <div class="day-cell">
+                                    <span class="task-item">Tarefa 4 - Enviar proposta</span>
+                                    <span class="task-item">Tarefa 5 - Revisar contrato</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="day-container">
+                                <div class="day-header"><span class="day-number">20</span></div>
+                                <div class="day-cell">
+                                    <span class="task-item">Tarefa 6 - Pagar contas</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="day-container">
+                                <div class="day-header"><span class="day-number">21</span></div>
+                                <div class="day-cell">
+                                    <span class="task-item">Tarefa 7 - Comprar presentes</span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <!-- Semana 4: 22/mar a 28/mar -->
+                    <tr>
+                        <td class="week-label">Semana 4</td>
+                        <td>
+                            <div class="day-container">
+                                <div class="day-header"><span class="day-number">22</span></div>
+                                <div class="day-cell">
+                                    <span class="task-item">Tarefa 8 - Almoço família</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="day-container">
+                                <div class="day-header"><span class="day-number">23</span></div>
+                                <div class="day-cell">
+                                    <span class="task-item">Tarefa 9 - Enviar e-mails</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="day-container">
+                                <div class="day-header"><span class="day-number">24</span></div>
+                                <div class="day-cell">
+                                    <span class="task-item">Tarefa 10 - Preparar apresentação</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="day-container">
+                                <div class="day-header"><span class="day-number">25</span></div>
+                                <div class="day-cell">
+                                    <span class="task-item">Tarefa 11 - Consulta médica</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="day-container">
+                                <div class="day-header"><span class="day-number">26</span></div>
+                                <div class="day-cell">
+                                    <span class="task-item">Tarefa 12 - Reunião fornecedor</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="day-container">
+                                <div class="day-header"><span class="day-number">27</span></div>
+                                <div class="day-cell">
+                                    <span class="task-item">Tarefa 13 - Entregar projeto</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="day-container">
+                                <div class="day-header"><span class="day-number">28</span></div>
+                                <div class="day-cell">
+                                    <span class="task-item">Tarefa 14 - Festa aniversário</span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <!-- Semana 5: 29/mar a 04/abr -->
+                    <tr>
+                        <td class="week-label">Semana 5</td>
+                        <td>
+                            <div class="day-container">
+                                <div class="day-header"><span class="day-number">29</span></div>
+                                <div class="day-cell">
+                                    <span class="task-item">Tarefa 15 - Descansar</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td><div class="day-container"><div class="day-header"><span class="day-number">30</span></div><div class="day-cell"></div></div></td>
+                        <td><div class="day-container"><div class="day-header"><span class="day-number">31</span></div><div class="day-cell"></div></div></td>
+                        <td>
+                            <div class="day-container">
+                                <div class="day-header">
+                                    <span class="day-number">01</span>
+                                    <span class="month-indicator">abr</span>
+                                </div>
+                                <div class="day-cell"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="day-container">
+                                <div class="day-header">
+                                    <span class="day-number">02</span>
+                                    <span class="month-indicator">abr</span>
+                                </div>
+                                <div class="day-cell"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="day-container">
+                                <div class="day-header">
+                                    <span class="day-number">03</span>
+                                    <span class="month-indicator">abr</span>
+                                </div>
+                                <div class="day-cell"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="day-container">
+                                <div class="day-header">
+                                    <span class="day-number">04</span>
+                                    <span class="month-indicator">abr</span>
+                                </div>
+                                <div class="day-cell"></div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-        <!-- Tabela do Calendário -->
-        <table class="calendario-table">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>Dom</th>
-                    <th>Seg</th>
-                    <th>Ter</th>
-                    <th>Qua</th>
-                    <th>Qui</th>
-                    <th>Sex</th>
-                    <th>Sab</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Semana 1: vazia -->
-                <tr>
-                    <th>Semana 1</th> <!-- Usando <th> para o label da semana, fica mais semântico -->
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <!-- Semana 2: com tarefas na Terça -->
-                <tr>
-                    <th>Semana 2</th>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <span class="cell-task">Tarefa 1</span>
-                        <span class="cell-task">Tarefa 2</span>
-                        <span class="cell-task">Tarefa 3</span>
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <!-- Semana 3: com tarefas na Quinta -->
-                <tr>
-                    <th>Semana 3</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <span class="cell-task">Tarefa 4</span>
-                        <span class="cell-task">Tarefa 5</span>
-                    </td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <!-- Semana 4: vazia -->
-                <tr>
-                    <th>Semana 4</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <!-- Semana 5: vazia -->
-                <tr>
-                    <th>Semana 5</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
+        <!-- Seção Lista de tarefas -->
+        <div class="tasks-section">
+            <div class="section-title">Lista de tarefas</div>
+            
+            <div class="tasks-container">
+                <table class="tasks-table">
+                    <thead>
+                        <tr>
+                            <th>titulo</th>
+                            <th>data</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>tarefa 1 - Reunião</td><td class="data-col">terça, 10/03/2026</td></tr>
+                        <tr><td>tarefa 2 - Entregar relatório</td><td class="data-col">terça, 10/03/2026</td></tr>
+                        <tr><td>tarefa 3 - Ligar para cliente</td><td class="data-col">terça, 10/03/2026</td></tr>
+                        <tr><td>tarefa 4 - Enviar proposta</td><td class="data-col">quinta, 19/03/2026</td></tr>
+                        <tr><td>tarefa 5 - Revisar contrato</td><td class="data-col">quinta, 19/03/2026</td></tr>
+                        <tr><td>tarefa 6 - Pagar contas</td><td class="data-col">sexta, 20/03/2026</td></tr>
+                        <tr><td>tarefa 7 - Comprar presentes</td><td class="data-col">sábado, 21/03/2026</td></tr>
+                        <tr><td>tarefa 8 - Almoço família</td><td class="data-col">domingo, 22/03/2026</td></tr>
+                        <tr><td>tarefa 9 - Enviar e-mails</td><td class="data-col">segunda, 23/03/2026</td></tr>
+                        <tr><td>tarefa 10 - Preparar apresentação</td><td class="data-col">terça, 24/03/2026</td></tr>
+                        <tr><td>tarefa 11 - Consulta médica</td><td class="data-col">quarta, 25/03/2026</td></tr>
+                        <tr><td>tarefa 12 - Reunião fornecedor</td><td class="data-col">quinta, 26/03/2026</td></tr>
+                        <tr><td>tarefa 13 - Entregar projeto</td><td class="data-col">sexta, 27/03/2026</td></tr>
+                        <tr><td>tarefa 14 - Festa aniversário</td><td class="data-col">sábado, 28/03/2026</td></tr>
+                        <tr><td>tarefa 15 - Descansar</td><td class="data-col">domingo, 29/03/2026</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
-        <!-- Seção Lista de Tarefas -->
-        <h2>📋 Lista de tarefas</h2>
-
-        <table class="tasks-table">
-            <thead>
-                <tr>
-                    <th>titulo</th>
-                    <th>data</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>tarefa 1</td>
-                    <td>terça, 15/04/2025</td>
-                </tr>
-                <tr>
-                    <td>tarefa 2</td>
-                    <td>terça, 15/04/2025</td>
-                </tr>
-                <tr>
-                    <td>tarefa 3</td>
-                    <td>terça, 15/04/2025</td>
-                </tr>
-                <tr>
-                    <td>tarefa 4</td>
-                    <td>quinta, 17/04/2025</td>
-                </tr>
-                <tr>
-                    <td>tarefa 5</td>
-                    <td>quinta, 17/04/2025</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <!-- Rodapé sutil (opcional) -->
-        <footer>
-            <hr>
-            <p class="footnote">wireframe planner · baseado em <a href="https://github.com/andybrewer/mvp.css" target="_blank">MVP.css</a></p>
-        </footer>
-    </main>
+        <div class="footer-note">Março 2026</div>
+    </div>
 </body>
 </html>
