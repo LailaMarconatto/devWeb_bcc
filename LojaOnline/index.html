@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Loja Online</title>
+    <style>
+        .card {
+            transition: transform 0.2s;
+            height: 100%;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .category-item {
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .category-item:hover {
+            background-color: #0d6efd;
+            color: white;
+            transform: translateX(5px);
+        }
+        .promo-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #dc3545;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            z-index: 1;
+        }
+        .price {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #28a745;
+        }
+        .old-price {
+            text-decoration: line-through;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        .product-description {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        .sidebar {
+            position: sticky;
+            top: 20px;
+        }
+        @media (max-width: 768px) {
+            .sidebar {
+                position: static;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-shop"></i> Loja Online
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-cart"></i> Carrinho
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-person"></i> Minha Conta
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+        <div class="row">
+            <!-- Sidebar com categorias -->
+            <div class="col-lg-3 mb-4">
+                <div class="sidebar">
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0"><i class="bi bi-grid"></i> Categorias</h5>
+                        </div>
+                        <div class="list-group list-group-flush">
+                            <a href="#" class="list-group-item list-group-item-action category-item">
+                                <i class="bi bi-tag"></i> categoria 1
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action category-item">
+                                <i class="bi bi-tag"></i> categoria 2
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action category-item">
+                                <i class="bi bi-tag"></i> categoria 3
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action category-item">
+                                <i class="bi bi-tag"></i> categoria 4
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action category-item">
+                                <i class="bi bi-tag"></i> categoria 5
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action category-item">
+                                <i class="bi bi-tag"></i> categoria 6
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action category-item">
+                                <i class="bi bi-tag"></i> categoria 7
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action category-item">
+                                <i class="bi bi-tag"></i> categoria 8
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action category-item">
+                                <i class="bi bi-tag"></i> categoria 9
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action category-item">
+                                <i class="bi bi-tag"></i> categoria 10
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action category-item">
+                                <i class="bi bi-tag"></i> categoria 11
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action category-item">
+                                <i class="bi bi-tag"></i> categoria 12
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action category-item">
+                                <i class="bi bi-tag"></i> categoria 13
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action category-item">
+                                <i class="bi bi-tag"></i> categoria 14
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conteúdo principal -->
+            <div class="col-lg-9">
+                <!-- Produtos em destaque -->
+                <div class="mb-5">
+                    <h2 class="mb-4">Produtos em Destaque</h2>
+                    <div class="row g-4">
+                        <!-- Produto 1 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">nome produto</h5>
+                                    <p class="product-description">
+                                        descricao produto<br>
+                                        descricao produto<br>
+                                        descricao produto
+                                    </p>
+                                    <p class="price">R$ 79,90</p>
+                                    <button class="btn btn-primary btn-sm w-100">
+                                        <i class="bi bi-cart-plus"></i> Comprar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Produto 2 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">nome produto</h5>
+                                    <p class="product-description">
+                                        descricao produto<br>
+                                        descricao produto<br>
+                                        descricao produtos
+                                    </p>
+                                    <p class="price">R$ 49,90</p>
+                                    <button class="btn btn-primary btn-sm w-100">
+                                        <i class="bi bi-cart-plus"></i> Comprar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Produto 3 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">nome produto</h5>
+                                    <p class="product-description">
+                                        descricao produto<br>
+                                        descricao produto<br>
+                                        descricao produto
+                                    </p>
+                                    <p class="price">R$ 129,90</p>
+                                    <button class="btn btn-primary btn-sm w-100">
+                                        <i class="bi bi-cart-plus"></i> Comprar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Produto 4 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">nome produto</h5>
+                                    <p class="product-description">
+                                        descricao produto<br>
+                                        descricao produto<br>
+                                        descricao produto
+                                    </p>
+                                    <p class="price">R$ 199,90</p>
+                                    <button class="btn btn-primary btn-sm w-100">
+                                        <i class="bi bi-cart-plus"></i> Comprar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Produto 5 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">nome produto</h5>
+                                    <p class="product-description">
+                                        descricao produto<br>
+                                        descricao produto<br>
+                                        descricao produto
+                                    </p>
+                                    <p class="price">R$ 59,90</p>
+                                    <button class="btn btn-primary btn-sm w-100">
+                                        <i class="bi bi-cart-plus"></i> Comprar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Produto 6 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">nome produto</h5>
+                                    <p class="product-description">
+                                        descricao produto<br>
+                                        descricao produto<br>
+                                        descricao produto
+                                    </p>
+                                    <p class="price">R$ 89,90</p>
+                                    <button class="btn btn-primary btn-sm w-100">
+                                        <i class="bi bi-cart-plus"></i> Comprar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paginação -->
+                <nav aria-label="Navegação de páginas" class="mb-5">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Anterior">
+                                <span aria-hidden="true">&laquo;</span>
+                                <span class="visually-hidden">Anterior</span>
+                            </a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item disabled"><span class="page-link">...</span></li>
+                        <li class="page-item"><a class="page-link" href="#">20</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Próxima">
+                                <span aria-hidden="true">&raquo;</span>
+                                <span class="visually-hidden">Próxima</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Seção de Promoções -->
+                <div>
+                    <h2 class="mb-4">Promoções</h2>
+                    <div class="row g-4">
+                        <!-- Produto Promoção 1 -->
+                        <div class="col-md-6">
+                            <div class="card position-relative">
+                                <div class="promo-badge">-30%</div>
+                                <div class="card-body">
+                                    <h5 class="card-title">nome produto</h5>
+                                    <p class="product-description">
+                                        descricao produto<br>
+                                        descricao produto<br>
+                                        descricao produto
+                                    </p>
+                                    <div>
+                                        <span class="old-price">R$ 99,90</span>
+                                        <span class="price ms-2">R$ 69,90</span>
+                                    </div>
+                                    <button class="btn btn-danger btn-sm w-100 mt-2">
+                                        <i class="bi bi-cart-plus"></i> Aproveitar Oferta
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Produto Promoção 2 -->
+                        <div class="col-md-6">
+                            <div class="card position-relative">
+                                <div class="promo-badge">-25%</div>
+                                <div class="card-body">
+                                    <h5 class="card-title">nome produto</h5>
+                                    <p class="product-description">
+                                        descricao produto<br>
+                                        descricao produto<br>
+                                        descricao produto
+                                    </p>
+                                    <div>
+                                        <span class="old-price">R$ 79,90</span>
+                                        <span class="price ms-2">R$ 59,90</span>
+                                    </div>
+                                    <button class="btn btn-danger btn-sm w-100 mt-2">
+                                        <i class="bi bi-cart-plus"></i> Aproveitar Oferta
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Produto Promoção 3 -->
+                        <div class="col-md-6">
+                            <div class="card position-relative">
+                                <div class="promo-badge">-15%</div>
+                                <div class="card-body">
+                                    <h5 class="card-title">nome produto</h5>
+                                    <p class="product-description">
+                                        descricao produto<br>
+                                        descricao produto<br>
+                                        descricao produto
+                                    </p>
+                                    <div>
+                                        <span class="old-price">R$ 149,90</span>
+                                        <span class="price ms-2">R$ 127,90</span>
+                                    </div>
+                                    <button class="btn btn-danger btn-sm w-100 mt-2">
+                                        <i class="bi bi-cart-plus"></i> Aproveitar Oferta
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Produto Promoção 4 -->
+                        <div class="col-md-6">
+                            <div class="card position-relative">
+                                <div class="promo-badge">-20%</div>
+                                <div class="card-body">
+                                    <h5 class="card-title">nome produto</h5>
+                                    <p class="product-description">
+                                        descricao produto<br>
+                                        descricao produto<br>
+                                        descricao produto
+                                    </p>
+                                    <div>
+                                        <span class="old-price">R$ 199,90</span>
+                                        <span class="price ms-2">R$ 159,90</span>
+                                    </div>
+                                    <button class="btn btn-danger btn-sm w-100 mt-2">
+                                        <i class="bi bi-cart-plus"></i> Aproveitar Oferta
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white mt-5 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="bi bi-shop"></i> Loja Online</h5>
+                    <p>Sua loja de confiança na internet</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>&copy; 2024 Loja Online - Todos os direitos reservados</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>

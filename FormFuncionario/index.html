@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Formulário Funcionario</title>
+</head>
+<body>
+    <div class="container p-5">
+        <h2 class="text-center mb-4">Formulário de Cadastro de Funcionário</h2>
+        
+        <form>
+            <!-- Dados Pessoais -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h4 class="mb-3">Dados Pessoais</h4>
+                </div>
+                
+                <!-- Nome - ocupando 2 colunas -->
+                <div class="col-12 mb-3">
+                    <label for="nome" class="form-label">Nome Completo</label>
+                    <input class="form-control" type="text" placeholder="Digite o nome completo" id="nome" name="nome">
+                </div>
+                
+                <!-- Primeira coluna dos dados pessoais -->
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="data_nascimento" class="form-label">Data de Nascimento</label>
+                        <input class="form-control" type="date" id="data_nascimento" name="data_nascimento">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="cpf" class="form-label">CPF</label>
+                        <input class="form-control" type="text" placeholder="000.000.000-00" id="cpf" name="cpf">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="titulo_eleitoral" class="form-label">Título de Eleitor</label>
+                        <input class="form-control" type="text" placeholder="0000 0000 0000" id="titulo_eleitoral" name="titulo_eleitoral">
+                    </div>
+                </div>
+                
+                <!-- Segunda coluna dos dados pessoais -->
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="sexo" class="form-label">Sexo</label>
+                        <select class="form-select" id="sexo" name="sexo">
+                            <option value="">Selecione...</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="feminino">Feminino</option>
+                            <option value="outro">Outro</option>
+                            <option value="prefiro_nao_declarar">Prefiro não declarar</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="rg" class="form-label">RG</label>
+                        <input class="form-control" type="text" placeholder="00.000.000-0" id="rg" name="rg">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="numero_filhos" class="form-label">Número de Filhos</label>
+                        <input class="form-control" type="number" placeholder="0" id="numero_filhos" name="numero_filhos" min="0">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Endereço -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h4 class="mb-3">Endereço</h4>
+                </div>
+                
+                <!-- Primeira coluna do endereço -->
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="endereco_rua" class="form-label">Rua</label>
+                        <input class="form-control" type="text" placeholder="Nome da rua" id="endereco_rua" name="endereco_rua">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="endereco_bairro" class="form-label">Bairro</label>
+                        <input class="form-control" type="text" placeholder="Bairro" id="endereco_bairro" name="endereco_bairro">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="endereco_cidade" class="form-label">Cidade</label>
+                        <input class="form-control" type="text" placeholder="Cidade" id="endereco_cidade" name="endereco_cidade">
+                    </div>
+                </div>
+                
+                <!-- Segunda coluna do endereço -->
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="endereco_numero" class="form-label">Número</label>
+                        <input class="form-control" type="text" placeholder="Número" id="endereco_numero" name="endereco_numero">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="endereco_cep" class="form-label">CEP</label>
+                        <input class="form-control" type="text" placeholder="00000-000" id="endereco_cep" name="endereco_cep">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="endereco_estado" class="form-label">Estado</label>
+                        <select class="form-select" id="endereco_estado" name="endereco_estado">
+                            <option value="">Selecione o estado...</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contato e Redes Sociais -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h4 class="mb-3">Contato e Redes Sociais</h4>
+                </div>
+                
+                <!-- Primeira coluna do contato -->
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="telefone_residencial" class="form-label">Telefone Residencial</label>
+                        <input class="form-control" type="tel" placeholder="(00) 0000-0000" id="telefone_residencial" name="telefone_residencial">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="instagram" class="form-label">Instagram</label>
+                        <div class="input-group">
+                            <span class="input-group-text">@</span>
+                            <input class="form-control" type="text" placeholder="usuario" id="instagram" name="instagram">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Segunda coluna do contato -->
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="telefone_celular" class="form-label">Telefone Celular</label>
+                        <input class="form-control" type="tel" placeholder="(00) 00000-0000" id="telefone_celular" name="telefone_celular">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="facebook" class="form-label">Facebook</label>
+                        <div class="input-group">
+                            <span class="input-group-text">facebook.com/</span>
+                            <input class="form-control" type="text" placeholder="usuario" id="facebook" name="facebook">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Salário -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h4 class="mb-3">Informações Profissionais</h4>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="salario" class="form-label">Salário</label>
+                        <div class="input-group">
+                            <span class="input-group-text">R$</span>
+                            <input class="form-control" type="number" step="0.01" placeholder="0,00" id="salario" name="salario">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Botões de ação -->
+            <div class="row">
+                <div class="col-12">
+                    <hr class="mb-4">
+                    <div class="d-flex gap-2 justify-content-end">
+                        <button type="reset" class="btn btn-secondary">Limpar</button>
+                        <button type="submit" class="btn btn-primary">Cadastrar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
