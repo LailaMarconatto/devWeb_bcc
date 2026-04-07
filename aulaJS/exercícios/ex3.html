@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 3 - Situação Eleitoral</title>
+</head>
+<body>
+    <h1>Verificador de Votação</h1>
+    
+    <script>
+        let idade = Number(prompt("Digite sua idade:"));
+        let situacao = idade >= 18 && idade <= 70 ? "VOTO OBRIGATÓRIO" :
+                       idade >= 16 || idade > 70 ? "VOTO OPCIONAL" :
+                       "NÃO VOTA";
+        
+        document.write("<h2>Resultado:</h2>");
+        document.write("Idade: " + idade + " anos<br>");
+        document.write("Situação: " + situacao);
+    </script>
+</body>
+</html>
