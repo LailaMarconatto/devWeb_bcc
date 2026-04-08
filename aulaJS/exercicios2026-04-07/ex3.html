@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3 - Divisão do Baralho</title>
+</head>
+<body>
+    <h1>Divisão do Baralho para 4 Jogadores</h1>
+    <p>Informe quantas cartas já foram entregues e descubra qual jogador recebeu a última carta</p>
+
+    <script>
+        let cartas = prompt("Digite o número de cartas já entregues: ")
+        let resto = parseInt(cartas) % 4
+        
+        switch(resto) {
+            case 1:
+                document.write("Jogador 1 recebeu a última carta!")
+                break
+            case 2:
+                document.write("Jogador 2 recebeu a última carta!")
+                break
+            case 3:
+                document.write("Jogador 3 recebeu a última carta!")
+                break
+            case 0:
+                document.write("Jogador 4 recebeu a última carta!")
+                break
+            default:
+                alert("Valor inválido! Digite um número válido.")
+        }
+    </script>
+</body>
+</html>
