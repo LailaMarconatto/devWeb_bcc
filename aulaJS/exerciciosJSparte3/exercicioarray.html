@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício com Arrays - Idades</title>
+</head>
+<body>
+    <script>
+        let idades = [];
+        for(let i = 0; i < 10; i++) {
+            let idade = prompt(`Digite a ${i+1}ª idade:`);
+            idades.push(parseInt(idade));
+        }
+        
+        document.write("<h3>1. Lista de idades (não ordenada):</h3>");
+        document.write("<ul>");
+        for(let i = 0; i < idades.length; i++) {
+            document.write(`<li>Idade ${i+1}: ${idades[i]} anos</li>`);
+        }
+        document.write("</ul>");
+        
+        document.write("<h3>2. Lista de idades (ordenada crescente):</h3>");
+        let idadesCrescente = [...idades];
+        idadesCrescente.sort((a, b) => a - b);
+        document.write("<ul>");
+        for(let i = 0; i < idadesCrescente.length; i++) {
+            document.write(`<li>${idadesCrescente[i]} anos</li>`);
+        }
+        document.write("</ul>");
+        
+        // Mostra lista ordenada decrescente
+        document.write("<h3>3. Lista de idades (ordenada decrescente):</h3>");
+        let idadesDecrescente = [...idades];
+        idadesDecrescente.sort((a, b) => b - a);
+        document.write("<ul>");
+        for(let i = 0; i < idadesDecrescente.length; i++) {
+            document.write(`<li>${idadesDecrescente[i]} anos</li>`);
+        }
+        document.write("</ul>");
+    </script>
+</body>
+</html>

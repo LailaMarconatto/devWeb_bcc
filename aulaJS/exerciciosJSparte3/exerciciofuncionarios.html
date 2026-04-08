@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de cadastro de funcionarios</title>
+</head>
+<body>
+    <script>
+        let funcionarios = [];
+        
+        for(let i = 0; i < 5; i++) {
+            let id = prompt(`Digite o ID do ${i+1}º funcionário:`);
+            let nome = prompt(`Digite o NOME do ${i+1}º funcionário:`);
+            let salario = parseFloat(prompt(`Digite o SALÁRIO do ${i+1}º funcionário:`));
+            let idade = parseInt(prompt(`Digite a IDADE do ${i+1}º funcionário:`));
+            
+            funcionarios.push({
+                id: id,
+                nome: nome,
+                salario: salario,
+                idade: idade
+            });
+        }
+        
+        document.write("<h3>4. Tabela de Funcionários:</h3>");
+        document.write("<table border='1'>");
+        document.write("<tr><th>ID</th><th>Nome</th><th>Salário (R$)</th><th>Idade</th></tr>");
+        
+        for(let i = 0; i < funcionarios.length; i++) {
+            document.write("<tr>");
+            document.write(`<td>${funcionarios[i].id}</td>`);
+            document.write(`<td>${funcionarios[i].nome}</td>`);
+            document.write(`<td>R$ ${funcionarios[i].salario.toFixed(2)}</td>`);
+            document.write(`<td>${funcionarios[i].idade} anos</td>`);
+            document.write("</tr>");
+        }
+        document.write("</table>");
+        
+        let maisNovo = funcionarios[0];
+        for(let i = 1; i < funcionarios.length; i++) {
+            if(funcionarios[i].idade < maisNovo.idade) {
+                maisNovo = funcionarios[i];
+            }
+        }
+        
+        let maiorSalario = funcionarios[0];
+        for(let i = 1; i < funcionarios.length; i++) {
+            if(funcionarios[i].salario > maiorSalario.salario) {
+                maiorSalario = funcionarios[i];
+            }
+        }
+        
+        document.write("<h3>5. Informações Especiais:</h3>");
+        document.write(`<p><strong>Funcionário mais novo:</strong> ${maisNovo.nome} (${maisNovo.idade} anos)</p>`);
+        document.write(`<p><strong>Idade do funcionário com maior salário:</strong> ${maiorSalario.idade} anos</p>`);
+        document.write(`<p><strong>Detalhe:</strong> ${maiorSalario.nome} tem o maior salário (R$ ${maiorSalario.salario.toFixed(2)}) e possui ${maiorSalario.idade} anos.</p>`);
+    </script>
+</body>
+</html>
