@@ -1,0 +1,12 @@
+ <footer>
+            <div class="copyright">
+                &copy Todos os direitos reservados
+            </div>
+            <div class="newsletter">
+                <form action="" method="get">
+                    <input type="text" name="nome">
+                    <input type="text" name="email">
+                    <input type="submit" value="ok">
+                </form>
+            </div>
+        </footer>
